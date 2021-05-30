@@ -1,0 +1,32 @@
+.CompanyEntry .cardImg {
+	height: 200px;
+}
+
+.CompanyEntry .cardContent {
+	position: relative;
+}
+
+.CompanyEntry .title {
+	font-weight: bold;
+}
+
+.CompanyEntry .text2 {
+	opacity: 0.6;
+}
+
+.CompanyEntry-bottomBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.CompanyEntry-companyLogo {
+	position: absolute;
+	top: -90px;
+	right: 16px;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: 3px solid black;
+	background-color: white;
+}

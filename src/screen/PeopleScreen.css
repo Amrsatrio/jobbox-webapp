@@ -1,0 +1,41 @@
+.PersonEntry {
+	padding: 16px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.PersonEntry > div {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.PersonEntry .avatar {
+	margin-right: 14px;
+}
+
+.PersonEntry-titleAndCompany {
+	flex: 1;
+}
+
+.PersonEntry-companyInfo {
+	display: flex;
+	align-items: center;
+	font-size: small;
+}
+
+.PersonEntry-companyInfo > img {
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+	border-radius: 50%;
+}
+
+.PersonEntry-companyInfo > .text1 {
+	opacity: 0.6;
+}
+
+.buttonRow button {
+	margin-left: 12px;
+}
