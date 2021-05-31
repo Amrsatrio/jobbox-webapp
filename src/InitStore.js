@@ -3,43 +3,60 @@ window.__store = {
 		companies: {
 			"grab": {
 				id: "grab",
-				name: "Grab",
+				name: "Grab Holdings Inc.",
 				image: "/assets/logo/grab.png",
+				background: "/assets/background/grab-background.jpg",
 				tagline: "Drive Southeast Asia forward with us.",
 				type: "Information Technology & Services",
 				employees: 32648,
 				jobOffers: [
-					{
-						position: "Accountant",
-						type: "Associate",
-						location: "Jakarta Pusat, Jakarta",
-						image: "/assets/logo/coursera.png"
-					},
-					{
-						position: "Customer Service",
-						type: "Associate",
-						location: "Serang, Banten",
-						image: "/assets/logo/gojek.png"
-					}
+					//"coursera-accountant",
+					"grab-accountant"
 				],
 				posts: [
 					"grab"
 				]
 			},
+			"shopee": {
+				id: "shopee",
+				name: "Shopee Pte Ltd",
+				image: "/assets/logo/shopee.png",
+				background: "/assets/background/shopee-background.jpg",
+				tagline: "Lorem ipsum dolor sit amet.",
+				type: "E-Commerce, Consumer Electronics, and Digital Distribution",
+				employees: 20000,
+			},
 			"rauhwelt": {
 				id: "rauhwelt",
 				name: "Rauh Welt",
 				image: "/assets/logo/RW.jpg",
+				tagline: "Lorem ipsum dolor sit amet.",
+				type: "[PH] Company Industry",
+				employees: 1500,
 			},
 			"dodoro": {
 				id: "dodoro",
 				name: "Dodoro Inc.",
-				image: "/assets/logo/logo-dodoro.png"
+				image: "/assets/logo/logo-dodoro.png",
+				tagline: "Lorem ipsum dolor sit amet.",
+				type: "[PH] Company Industry",
+				employees: 2000,
 			},
-			"shopee": {
-				id: "shopee",
-				name: "Shopee",
-				image: "/assets/logo/shopee.png",
+			"gojek": {
+				id: "gojek",
+				name: "PT Aplikasi Karya Anak Bangsa",
+				image: "/assets/logo/Gojek.png",
+				tagline: "Lorem ipsum dolor sit amet.",
+				type: "Technology",
+				employees: 3000,
+			},
+			"coursera": {
+				id: "gojek",
+				name: "Coursera Inc.",
+				image: "/assets/logo/coursera.png",
+				tagline: "Lorem ipsum dolor sit amet.",
+				type: "Technology",
+				employees: 1792,
 			}
 		}
 	},
@@ -77,24 +94,9 @@ window.__store = {
 	},
 	HomeStore: {
 		recommended: [
-			{
-				position: "Customer Service",
-				type: "Internship",
-				location: "Babakaran, Yogyakarta",
-				image: "/assets/logo/shopee.png"
-			},
-			{
-				position: "Accountant",
-				type: "Associate",
-				location: "Jakarta Pusat, Jakarta",
-				image: "/assets/logo/coursera.png"
-			},
-			{
-				position: "Customer Service",
-				type: "Associate",
-				location: "Serang, Banten",
-				image: "/assets/logo/gojek.png"
-			}
+			"shopee-customerservice",
+			"coursera-accountant",
+			"gojek-customerservice"
 		],
 		recentlyPosted: [
 			"grab"
@@ -102,11 +104,37 @@ window.__store = {
 	},
 	JobStore: {
 		jobs: {
-			"d0a3dd8c-7c72-4a4f-8952-0d8879e8b2bc": {
+			"shopee-customerservice": {
+				id: "shopee-customerservice",
+				position: "Customer Service",
+				company: "shopee",
+				type: "Internship",
+				location: "Babakaran, Yogyakarta",
+				image: "/assets/logo/shopee.png",
+			},
+			"coursera-accountant": {
+				id: "coursera-accountant",
+				position: "Accountant",
+				company: "coursera",
+				type: "Associate",
+				location: "Jakarta Pusat, Jakarta",
+				image: "/assets/logo/coursera.png"
+			},
+			"gojek-customerservice": {
+				id: "gojek-customerservice",
+				position: "Customer Service",
+				company: "gojek",
+				type: "Associate",
+				location: "Serang, Banten",
+				image: "/assets/logo/gojek.png"
+			},
+			"grab-accountant": {
+				id: "grab-accountant",
 				position: "Accountant",
 				company: "grab",
 				type: "Associate",
 				location: "Padjajaran, Bogor",
+				image: "/assets/background/accountant.jpg",
 				about: "Reporting to the Management Accountant this Accountant is an accounting and finance all-rounder. You will deliver revenue assurance by driving improvements in process and",
 				keyRequirements: [
 					"A Degree",
@@ -116,6 +144,22 @@ window.__store = {
 					"Strong business partnering skills is a must",
 					"Strong written and verbal communication skills",
 				]
+			},
+			"coursera-accountant": {
+				id: "coursera-accountant",
+				position: "Accountant",
+				company: "coursera",
+				type: "Associate",
+				location: "Jakarta Pusat, Jakarta",
+				image: "/assets/logo/coursera.png"
+			},
+			"gojek-associate": {
+				id: "gojek-associate",
+				company: "gojek",
+				position: "Customer Service",
+				type: "Associate",
+				location: "Serang, Banten",
+				image: "/assets/logo/gojek.png"
 			}
 		}
 	},

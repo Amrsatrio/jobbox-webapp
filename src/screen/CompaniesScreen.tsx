@@ -8,7 +8,7 @@ function CompanyEntry(props: any) {
 	return (
 		<div className="CompanyEntry card voucherCard clickable"
 			 onClick={() => history.push("/companies/" + company.id)}>
-			<img className="cardImg" src={company.image}/>
+			<img className="cardImg" src={company.background || company.image}/>
 			<div className="cardContent">
 				<div className="primary">{company.name}</div>
 				<div className="text1">{company.tagline}</div>

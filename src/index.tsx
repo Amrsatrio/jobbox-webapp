@@ -60,13 +60,43 @@ function NavItem(it: [string, any]) {
 	)
 }
 
+class JobDetailsScreen extends Component<any> {
+	render() {
+		const id = this.props.match.params.id;
+		const job = window.__store.JobStore.jobs[id]
+		const company = window.__store.CompanyStore.companies[job.company]
+		return (<div>
+			<div className="JobDetailsHeader">
+				<img className="jobCompanyLogo" src={company.image}/>
+				<div>
+					<div className="title">{job.position}</div>
+					<div className="JobDetailsHeader-companyName">{company.name}</div>
+					<div className="JobDetailsHeader-location">{job.location}</div>
+					<button className="JobDetailsHeader-applyJob">Apply</button>
+				</div>
+			</div>
+			<h3>About</h3>
+			<p>{job.about}</p>
+			<h3>Key Requirements</h3>
+			<ul>
+				{(job.keyRequirements as Array<string>)?.map(it => <li>{it}</li>)}
+			</ul>
+		</div>)
+	}
+}
+
 ReactDOM.render(
 	<StrictMode>
 		<BrowserRouter>
 			<div className="contentRoot">
 				<header>
 					<div className="headerContainer">
-						<nav>{Object.entries(navData).map(NavItem)}</nav>
+						<div>
+							<img className="brandingLogo" src="/assets/logo/jobbox-02.png"/>
+						</div>
+						<div>
+							<nav>{Object.entries(navData).map(NavItem)}</nav>
+						</div>
 					</div>
 				</header>
 				<div className="switch">
@@ -79,6 +109,7 @@ ReactDOM.render(
 						<Route path="/messages" component={MessagesScreen}/>
 						<Route path="/companies/:id" component={CompanyDetailsScreen}/>
 						<Route path="/people/:id" component={ProfileScreen}/>
+						<Route path="/jobs/:id" component={JobDetailsScreen}/>
 					</Switch>
 				</div>
 			</div>
@@ -87,10 +118,13 @@ ReactDOM.render(
 	document.getElementById('root')
 )
 
-ReactDOM.render(
-	<LandingScreen/>,
-	document.getElementById('landing')
-)
+let landingContainer = document.getElementById('landing');
+if (landingContainer) {
+	ReactDOM.render(
+		<LandingScreen/>,
+		landingContainer
+	)
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
