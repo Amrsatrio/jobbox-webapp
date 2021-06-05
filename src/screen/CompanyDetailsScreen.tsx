@@ -29,9 +29,9 @@ class CompanyDetailsScreen extends Component<RouteComponentProps<CompanyDetailsS
 		return (
 			<div>
 				<CompanyDetailsHeader company={company}/>
-				<h3>Job Offers</h3>
+				<h2>Job Offers</h2>
 				<div className="simpleHorizontalScroll">{(company.jobOffers as Array<any>)?.map(it => Job({jobId: it, history: this.props.history, showJobIllustration: true}))}</div>
-				<h3>Posts</h3>
+				<h2>Posts</h2>
 				<div>{(company.posts as Array<string>)?.map(it => Post(window.__store.PostStore.posts[it]))}</div>
 			</div>
 		)

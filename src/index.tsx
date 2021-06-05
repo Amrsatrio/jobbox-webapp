@@ -75,9 +75,9 @@ class JobDetailsScreen extends Component<any> {
 					<button className="JobDetailsHeader-applyJob">Apply</button>
 				</div>
 			</div>
-			<h3>About</h3>
+			<h2>About</h2>
 			<p>{job.about}</p>
-			<h3>Key Requirements</h3>
+			<h2>Key Requirements</h2>
 			<ul>
 				{(job.keyRequirements as Array<string>)?.map(it => <li>{it}</li>)}
 			</ul>
@@ -85,11 +85,21 @@ class JobDetailsScreen extends Component<any> {
 	}
 }
 
+class Bottom extends Component<any, any> {
+	render() {
+		return (
+			<div>
+
+			</div>
+		)
+	}
+}
+
 ReactDOM.render(
 	<StrictMode>
 		<BrowserRouter>
-			<div className="contentRoot">
-				<header>
+			<div className="contentRoot mobile">
+				<header className="desktopHeader">
 					<div className="headerContainer">
 						<div>
 							<img className="brandingLogo" src="/assets/logo/jobbox-02.png"/>
@@ -112,6 +122,7 @@ ReactDOM.render(
 						<Route path="/jobs/:id" component={JobDetailsScreen}/>
 					</Switch>
 				</div>
+				<nav className="mobileNav">{Object.entries(navData).map(NavItem)}</nav>
 			</div>
 		</BrowserRouter>
 	</StrictMode>,

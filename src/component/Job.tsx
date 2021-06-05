@@ -9,7 +9,6 @@ interface JobProps {
 export default function Job(props: any) {
 	const { jobId, history, showJobIllustration } = props
 	const job = window.__store.JobStore.jobs[jobId]
-	if (job==null)console.log(jobId)
 	const company = window.__store.CompanyStore.companies[job.company]
 	return (<div>
 		<div className="Recommendation card clickable"

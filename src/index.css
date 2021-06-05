@@ -904,6 +904,51 @@ nav > a:hover svg, .NavItem-active svg {
 	width: 700px;
 }
 
+.contentRoot.mobile {
+	flex-direction: column;
+}
+
+.mobile .desktopHeader {
+	display: none;
+}
+
+.mobileNav {
+	flex-direction: row;
+	background: #FFF;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mobileNav > a {
+	padding: 0;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.mobileNav .NavItem-container {
+	flex-direction: column;
+	padding: 8px;
+}
+
+.mobileNav .title {
+	font-weight: normal;
+	font-size: small;
+	margin: 0;
+}
+
+.mobileNav > a:hover > .NavItem-container {
+	background-color: initial;
+}
+
+.mobile > .switch > div {
+	width: 100%;
+	margin-top: 52px;
+}
+
+h2 {
+	margin: 20px 16px 12px;
+}
+
 .avatar {
 	width: 48px;
 	height: 48px;
@@ -1212,4 +1257,40 @@ nav > a:hover svg, .NavItem-active svg {
 
 .brandingLogo {
 	height: 53px;
+}
+
+.AppBar {
+	height: 52px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.searchBar {
+	display: flex;
+	margin: 8px;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: rgba(0, 0, 0, 0.33) 0 0 6px;
+}
+
+.searchBar .searchIcon {
+	width: 20px;
+	height: 20px;
+	opacity: 0.5;
+	margin: 0 16px;
+	align-self: center;
+}
+
+.searchBar input {
+	flex: 1;
+	background: none;
+	border: none;
+	padding-right: 12px;
+}
+
+.searchBar .avatar {
+	width: 36px;
+	height: 36px;
+	margin: 8px;
 }

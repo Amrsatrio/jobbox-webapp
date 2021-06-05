@@ -4,6 +4,7 @@
       <option name="USE_CUSTOM_SETTINGS" value="true" />
     </AndroidXmlCodeStyleSettings>
     <JSCodeStyleSettings version="0">
+      <option name="JSX_ATTRIBUTE_VALUE" value="Based on type" />
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
     </JSCodeStyleSettings>
     <JetCodeStyleSettings>
