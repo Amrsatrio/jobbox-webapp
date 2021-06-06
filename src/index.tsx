@@ -5,13 +5,14 @@ import HomeScreen from './screen/HomeScreen'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, NavLink, Redirect, Route, Switch } from "react-router-dom"
 import './InitStore.js'
-import PeopleScreen from "./screen/PeopleScreen";
-import { ReactSVG } from "react-svg";
-import CompanyDetailsScreen from "./screen/CompanyDetailsScreen";
-import CompanyScreen from "./screen/CompaniesScreen";
-import ProfileScreen from "./screen/ProfileScreen";
-import MessagesScreen from "./screen/MessagesScreen";
-import LandingScreen from "./screen/LandingScreen";
+import PeopleScreen from "./screen/PeopleScreen"
+import { ReactSVG } from "react-svg"
+import CompanyDetailsScreen from "./screen/CompanyDetailsScreen"
+import CompanyScreen from "./screen/CompaniesScreen"
+import ProfileScreen from "./screen/ProfileScreen"
+import MessagesScreen from "./screen/MessagesScreen"
+import LandingScreen from "./screen/LandingScreen"
+import LoginScreen from "./screen/LoginScreen"
 
 declare global {
 	interface Window {
@@ -65,14 +66,15 @@ class JobDetailsScreen extends Component<any> {
 		const id = this.props.match.params.id;
 		const job = window.__store.JobStore.jobs[id]
 		const company = window.__store.CompanyStore.companies[job.company]
-		return (<div>
+		return (<div className="JobDetailsScreen">
 			<div className="JobDetailsHeader">
 				<img className="jobCompanyLogo" src={company.image}/>
 				<div>
-					<div className="title">{job.position}</div>
+					<h2 className="title">{job.position}</h2>
 					<div className="JobDetailsHeader-companyName">{company.name}</div>
+					<div className="JobDetailsHeader-type">{job.type}</div>
 					<div className="JobDetailsHeader-location">{job.location}</div>
-					<button className="JobDetailsHeader-applyJob">Apply</button>
+					<button className="JobDetailsHeader-applyJob colored">Apply</button>
 				</div>
 			</div>
 			<h2>About</h2>
@@ -134,6 +136,14 @@ if (landingContainer) {
 	ReactDOM.render(
 		<LandingScreen/>,
 		landingContainer
+	)
+}
+
+let loginContainer = document.getElementById('login');
+if (loginContainer) {
+	ReactDOM.render(
+		<LoginScreen/>,
+		loginContainer
 	)
 }
 

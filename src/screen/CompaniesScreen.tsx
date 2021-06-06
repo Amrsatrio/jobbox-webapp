@@ -1,7 +1,8 @@
-import { Component } from "react";
+import { Component } from "react"
 import "./CompaniesScreen.css"
-import { withRouter } from "react-router-dom";
-import { RouteComponentProps } from "react-router";
+import { withRouter } from "react-router-dom"
+import { RouteComponentProps } from "react-router"
+import { AppBar } from "../component/AppBar"
 
 function CompanyEntry(props: any) {
 	const { company, history } = props
@@ -26,8 +27,11 @@ function CompanyEntry(props: any) {
 class CompaniesScreen extends Component<RouteComponentProps> {
 	render() {
 		return (<div>
-			{Object.values(window.__store.CompanyStore.companies as Array<any>).map(it => (
-				<CompanyEntry company={it} history={this.props.history} key={it.id}/>))}
+			<AppBar/>
+			<div>
+				{Object.values(window.__store.CompanyStore.companies as Array<any>)
+					.map(it => (<CompanyEntry company={it} history={this.props.history} key={it.id}/>))}
+			</div>
 		</div>)
 	}
 }

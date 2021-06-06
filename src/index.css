@@ -42,6 +42,10 @@ img {
 	background-size: contain;
 }
 
+#landing {
+	display: none;
+}
+
 #landing > div {
 	overflow: auto;
 }
@@ -918,9 +922,14 @@ nav > a:hover svg, .NavItem-active svg {
 }
 
 .mobileNav {
+	display: none;
 	flex-direction: row;
 	background: #FFF;
 	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mobile .mobileNav {
+	display: flex;
 }
 
 .mobileNav > a {
@@ -1268,7 +1277,8 @@ h2 {
 	height: 52px;
 	position: fixed;
 	top: 0;
-	width: 100%;
+	width: inherit;
+	z-index: 1;
 }
 
 .searchBar {
@@ -1361,7 +1371,7 @@ h2 {
 }
 
 .suggested {
-	margin: 0 24px;
+	margin: 0 24px -8px;
 }
 
 .JobCategorySuggestion {
@@ -1370,12 +1380,11 @@ h2 {
 	border-radius: 9999px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	margin-right: 6px;
+	margin-bottom: 8px;
 }
 
 .SiteFooter {
 	background-color: #303A52;
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 	color: white;
 	padding: 16px 24px;
@@ -1439,4 +1448,50 @@ h2 {
 .copyright {
 	text-align: center;
 	font-size: small;
+}
+
+.JobDetailsHeader {
+	display: flex;
+	margin: 16px
+}
+
+.JobDetailsHeader img {
+	width: 160px;
+	height: 160px;
+	margin-right: 16px;
+	background-color: white;
+	border-radius: 16px;
+}
+
+.JobDetailsHeader > div {
+	flex: 1;
+}
+
+.JobDetailsHeader .title {
+	font-size: 22px;
+	margin:0;
+}
+
+.JobDetailsHeader-companyName {
+}
+
+.JobDetailsHeader-type {
+	margin-top: 16px;
+}
+
+.JobDetailsHeader-location {
+	font-size: small;
+}
+
+.JobDetailsHeader-applyJob {
+	margin-top: 12px;
+	width: 100%;
+}
+
+.JobDetailsScreen p {
+	margin: 12px 16px;
+}
+
+.JobDetailsScreen ul {
+	padding-left: 36px;
 }

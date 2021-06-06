@@ -1,6 +1,7 @@
-import { Component } from "react";
-import { Route, Switch, withRouter } from "react-router-dom";
-import { getUserAvatar } from "./PeopleScreen";
+import { Component } from "react"
+import { Route, Switch, withRouter } from "react-router-dom"
+import { getUserAvatar } from "./PeopleScreen"
+import { AppBar } from "../component/AppBar"
 
 function MessageThread(props: any) {
 	const { person, lastMessage, history, url } = props
@@ -24,6 +25,7 @@ class MessagesScreen extends Component<any> {
 	render() {
 		let { path, url } = this.props.match
 		return (<div className="MessagesScreen">
+			<AppBar/>
 			<div className="MessagesScreen-threadsList">
 				{Object.entries(window.__store.MessagesStore.messages).map(it => {
 					const [key, messages] = it

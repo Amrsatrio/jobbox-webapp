@@ -1,7 +1,7 @@
-import { Component } from "react";
-import { RouteComponentProps } from "react-router";
-import { getUserAvatar } from "./PeopleScreen";
-import { withRouter } from "react-router-dom";
+import { Component } from "react"
+import { RouteComponentProps } from "react-router"
+import { getUserAvatar } from "./PeopleScreen"
+import { withRouter } from "react-router-dom"
 
 interface ProfileScreenProps {
 	id: string
@@ -127,7 +127,8 @@ class ProfileScreen extends Component<RouteComponentProps<ProfileScreenProps>> {
 			</div>
 			<div className="card cardContent">
 				<h3>Interests</h3>
-				<div className="ProfileScreen-interests">{(user.interests as Array<any>)?.map(entry => <img src={entry}/>)}</div>
+				<div className="ProfileScreen-interests">{(user.interests as Array<any>)?.map(entry => <img
+					src={entry}/>)}</div>
 			</div>
 		</div>)
 	}

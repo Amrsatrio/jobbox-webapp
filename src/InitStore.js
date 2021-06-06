@@ -51,7 +51,7 @@ window.__store = {
 				employees: 3000,
 			},
 			"coursera": {
-				id: "gojek",
+				id: "coursera",
 				name: "Coursera Inc.",
 				image: "/assets/logo/coursera.png",
 				tagline: "Lorem ipsum dolor sit amet.",
@@ -132,7 +132,10 @@ window.__store = {
 			suggestedCategories: [
 				"Engineering",
 				"Administration",
-				"Art & Design"
+				"Art & Design",
+				"Accounting",
+				"Customer Service",
+				"Law"
 			]
 		}
 	},

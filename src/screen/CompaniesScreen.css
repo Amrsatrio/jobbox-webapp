@@ -31,13 +31,3 @@
 	border: 3px solid black;
 	background-color: white;
 }
-
-.JobDetailsHeader {
-	display: flex;
-}
-
-.JobDetailsHeader img {
-	width: 200px;
-	height: 200px;
-	margin-right: 12px;
-}

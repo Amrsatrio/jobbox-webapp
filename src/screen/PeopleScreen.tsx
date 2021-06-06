@@ -1,6 +1,7 @@
-import { Component } from "react";
+import { Component } from "react"
 import "./PeopleScreen.css"
-import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom"
+import { AppBar } from "../component/AppBar"
 
 interface Person {
 	id: string
@@ -33,16 +34,19 @@ function PersonEntry(props: any) {
 }
 
 export function getUserAvatar(person: { avatar: string }): string {
-	return person ? "/assets/avatar/" + person.avatar + ".jpg" : "";
+	return person ? "/assets/avatar/" + person.avatar + ".jpg" : ""
 }
 
 class PeopleScreen extends Component<any> {
 	render() {
 		return (<div>
-			{Object.values(window.__store.UserStore.userCache as Array<Person>).map(it => PersonEntry({
-				person: it,
-				history: this.props.history
-			}))}
+			<AppBar/>
+			<div>
+				{Object.values(window.__store.UserStore.userCache as Array<Person>).map(it => PersonEntry({
+					person: it,
+					history: this.props.history
+				}))}
+			</div>
 		</div>)
 	}
 }
