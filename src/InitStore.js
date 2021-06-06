@@ -60,6 +60,50 @@ window.__store = {
 			}
 		}
 	},
+	FooterStore: {
+		address: "Bogor Raya, 28 Meria Ceria\nMile Suite #201",
+		email: "inquiries@jobbox.com",
+		phone: "+62 812-3456-7890",
+		links: [
+			{
+				title: "General",
+				entries: [
+					{
+						title: "Sign up"
+					},
+					{
+						title: "Sign in"
+					},
+					{
+						title: "About"
+					}
+				]
+			},
+			{
+				title: "Browse",
+				entries: [
+					{
+						title: "Jobs"
+					},
+					{
+						title: "Salary"
+					}
+				]
+			},
+			{
+				title: "Legal",
+				entries: [
+					{
+						title: "Terms of Service"
+					},
+					{
+						title: "Privacy Policy"
+					}
+				]
+			}
+		],
+		copyright: "\u00a9 JobBox 2021. All rights reserved."
+	},
 	HomeNotLoggedInStore: {
 		hero: {
 			title: "Explore Thousands of Dream Jobs",

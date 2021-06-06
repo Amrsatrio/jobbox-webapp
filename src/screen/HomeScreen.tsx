@@ -1,8 +1,8 @@
 import './HomeScreen.css'
-import { Component } from "react";
-import Post from "../component/Post";
-import Job from "../component/Job";
-import { withRouter } from "react-router-dom";
+import { Component } from "react"
+import Post from "../component/Post"
+import Job from "../component/Job"
+import { withRouter } from "react-router-dom"
 
 class HomeScreen extends Component<any> {
 	render() {
@@ -23,8 +23,7 @@ class HomeScreen extends Component<any> {
 					history: this.props.history
 				}))}</div>
 				<h2>Recently Posted</h2>
-				<div
-					className="App-recentlyPosted">{(homeStore.recentlyPosted as Array<string>).map(it => Post(window.__store.PostStore.posts[it]))}</div>
+				<div className="App-recentlyPosted">{(homeStore.recentlyPosted as Array<string>).map(it => Post(window.__store.PostStore.posts[it]))}</div>
 			</div>
 		)
 	}

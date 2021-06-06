@@ -18,6 +18,7 @@
 body {
 	margin: 0;
 	color: var(--text-color-primary);
+	overscroll-behavior: none;
 }
 
 body, input, button, select, option {
@@ -37,9 +38,12 @@ img {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
-	background: url("background.svg") bottom center no-repeat #F6F6F6;
+	background: /*url("background.svg") bottom center no-repeat*/ #F6F6F6;
 	background-size: contain;
+}
+
+#landing > div {
+	overflow: auto;
 }
 
 .wrapper {
@@ -339,7 +343,7 @@ button {
 	height: 36px;
 	padding: 0 16px;
 	background: #e0e0e0;
-	border-radius: 8px;
+	border-radius: 9999px;
 	transition: all .3s cubic-bezier(.25, .8, .25, 1);
 	border: 0;
 	/*margin-bottom: 6px;*/
@@ -902,6 +906,7 @@ nav > a:hover svg, .NavItem-active svg {
 	/*width: 990px;*/
 	/*width: 600px;*/
 	width: 700px;
+	padding: 8px 0;
 }
 
 .contentRoot.mobile {
@@ -1293,4 +1298,145 @@ h2 {
 	width: 36px;
 	height: 36px;
 	margin: 8px;
+}
+
+.illustration {
+	width: 100%;
+	padding: 0 16px;
+}
+
+.LandingScreen .content {
+	padding-bottom: 24px;
+}
+
+.LandingScreen .getStartedButton {
+	width: 200px;
+	height: 48px;
+	font-size: 20px;
+	margin-left: 24px;
+	margin-bottom: 16px;
+}
+
+.LandingScreen h2 {
+	font-size: 36px;
+	margin: 16px 24px;
+}
+
+.SiteNav {
+	background-color: white;
+	display: flex;
+	height: 53px;
+	align-items: center;
+	padding: 0 16px;
+}
+
+.SiteNav .brandingLogo {
+	height: 40px;
+}
+
+.howItWorks {
+	margin: 0 24px 16px;
+	background-color: white;
+	border-radius: 16px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 0 8px;
+}
+
+.howItWorks > div {
+	display: flex;
+	align-items: center;
+	font-weight: 500;
+	height: 48px;
+	padding: 0 16px;
+	font-size: large;
+}
+
+.howItWorks > div:not(:first-child) {
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.LandingScreen .content h3 {
+	color: var(--color-accent);
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.suggested {
+	margin: 0 24px;
+}
+
+.JobCategorySuggestion {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	margin-right: 6px;
+}
+
+.SiteFooter {
+	background-color: #303A52;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	padding: 16px 24px;
+}
+
+.SiteFooter .brandingLogo {
+	height: 32px;
+}
+
+.companyInfo {
+	display: flex;
+	align-items: center;
+}
+
+.companyInfo p {
+	margin: 0;
+}
+
+.companyAndAddress {
+	flex: 1;
+}
+
+.address {
+	white-space: pre-wrap;
+	font-size: small;
+}
+
+.emailAndPhone {
+	text-align: right;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.sections {
+	display: flex;
+	margin-top: 24px;
+}
+
+.section:not(:first-child) {
+	margin-left: 40px;
+}
+
+.sectionTitle {
+	font-weight: 500;
+	margin: 0;
+	font-size: 16px;
+}
+
+.sectionLinks {
+	list-style-type: none;
+	padding: 0;
+}
+
+.sectionLinks > li:not(:first-child) {
+	margin-top: 8px;
+}
+
+.sectionLinks > li > a {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.copyright {
+	text-align: center;
+	font-size: small;
 }
