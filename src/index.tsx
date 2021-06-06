@@ -10,19 +10,15 @@ import { ReactSVG } from "react-svg"
 import CompanyDetailsScreen from "./screen/CompanyDetailsScreen"
 import CompanyScreen from "./screen/CompaniesScreen"
 import ProfileScreen from "./screen/ProfileScreen"
-import MessagesScreen from "./screen/MessagesScreen"
+import MessagesScreen, { MessagesListFragment } from "./screen/MessagesScreen"
 import LandingScreen from "./screen/LandingScreen"
 import LoginScreen from "./screen/LoginScreen"
+import NearMeScreen from "./screen/NearMeScreen"
+import { AppBar } from "./component/AppBar"
 
 declare global {
 	interface Window {
 		__store: any
-	}
-}
-
-class NearMe extends Component {
-	render() {
-		return (<div></div>);
 	}
 }
 
@@ -63,10 +59,11 @@ function NavItem(it: [string, any]) {
 
 class JobDetailsScreen extends Component<any> {
 	render() {
-		const id = this.props.match.params.id;
+		const id = this.props.match.params.id
 		const job = window.__store.JobStore.jobs[id]
 		const company = window.__store.CompanyStore.companies[job.company]
 		return (<div className="JobDetailsScreen">
+			<AppBar title="Job" />
 			<div className="JobDetailsHeader">
 				<img className="jobCompanyLogo" src={company.image}/>
 				<div>
@@ -116,9 +113,10 @@ ReactDOM.render(
 						<Route exact path="/"><Redirect to="/home"/></Route>
 						<Route exact path="/home" component={HomeScreen}/>
 						<Route exact path="/people" component={PeopleScreen}/>
-						<Route exact path="/nearMe" component={NearMe}/>
+						<Route exact path="/nearMe" component={NearMeScreen}/>
 						<Route exact path="/companies" component={CompanyScreen}/>
-						<Route path="/messages" component={MessagesScreen}/>
+						<Route exact path="/messages" component={MessagesScreen}/>
+						<Route path="/messages/:threadId" component={MessagesListFragment}/>
 						<Route path="/companies/:id" component={CompanyDetailsScreen}/>
 						<Route path="/people/:id" component={ProfileScreen}/>
 						<Route path="/jobs/:id" component={JobDetailsScreen}/>
@@ -131,7 +129,7 @@ ReactDOM.render(
 	document.getElementById('root')
 )
 
-let landingContainer = document.getElementById('landing');
+let landingContainer = document.getElementById('landing')
 if (landingContainer) {
 	ReactDOM.render(
 		<LandingScreen/>,
@@ -139,7 +137,7 @@ if (landingContainer) {
 	)
 }
 
-let loginContainer = document.getElementById('login');
+let loginContainer = document.getElementById('login')
 if (loginContainer) {
 	ReactDOM.render(
 		<LoginScreen/>,

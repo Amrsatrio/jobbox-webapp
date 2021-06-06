@@ -368,41 +368,6 @@ window.__store = {
 	},
 	UserStore: {
 		userCache: {
-			"jonah": {
-				id: "jonah",
-				avatar: "XzA4MjM5NDguanBn",
-				name: "Jonah Kokasih",
-				position: "Software Engineer",
-				company: "dodoro"
-			},
-			"kiki": {
-				id: "kiki",
-				avatar: "XzAwMzM1NjUuanBn",
-				name: "Kiki Martabat",
-				position: "UI/UX Designer",
-				company: "dodoro"
-			},
-			"jojo": {
-				id: "jojo",
-				avatar: "XzAxMzkxMDkuanBn",
-				name: "Jojo Sinopal",
-				position: "Backend Engineer",
-				company: "shopee"
-			},
-			"jane": {
-				id: "jane",
-				avatar: "XzAyMTYzMDYuanBn",
-				name: "Jane Kalana",
-				position: "Art & Product Director",
-				company: "rauhwelt"
-			},
-			"mara": {
-				id: "mara",
-				avatar: "XzA3NjQyMDIuanBn",
-				name: "Mara Basuki",
-				position: "Software Engineer",
-				company: "dodoro"
-			},
 			"jane_clerk": {
 				id: "jane_clerk",
 				avatar: "XzAxODUzMzAuanBn",
@@ -526,7 +491,49 @@ window.__store = {
 					"/assets/logo/Gojek.png",
 					"/assets/logo/Grab.png"
 				]
-			}
+			},
+			"jonah": {
+				id: "jonah",
+				avatar: "XzA4MjM5NDguanBn",
+				name: "Jonah Kokasih",
+				position: "Software Engineer",
+				company: "dodoro"
+			},
+			"kiki": {
+				id: "kiki",
+				avatar: "XzAwMzM1NjUuanBn",
+				name: "Kiki Martabat",
+				position: "UI/UX Designer",
+				company: "dodoro"
+			},
+			"jojo": {
+				id: "jojo",
+				avatar: "XzAxMzkxMDkuanBn",
+				name: "Jojo Sinopal",
+				position: "Backend Engineer",
+				company: "shopee"
+			},
+			"jane": {
+				id: "jane",
+				avatar: "XzAyMTYzMDYuanBn",
+				name: "Jane Kalana",
+				position: "Art & Product Director",
+				company: "rauhwelt"
+			},
+			"mara": {
+				id: "mara",
+				avatar: "XzA3NjQyMDIuanBn",
+				name: "Mara Basuki",
+				position: "Software Engineer",
+				company: "dodoro"
+			},
+			"anne": {
+				id: "anne",
+				avatar: "XzAwNzUxNTkuanBn",
+				name: "Anne Watabe",
+				position: "Software Engineer",
+				company: "grab"
+			},
 		}
 	}
 }

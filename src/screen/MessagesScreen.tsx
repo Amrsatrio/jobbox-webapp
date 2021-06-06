@@ -25,7 +25,7 @@ class MessagesScreen extends Component<any> {
 	render() {
 		let { path, url } = this.props.match
 		return (<div className="MessagesScreen">
-			<AppBar/>
+			<AppBar title="Messages" showUp={false}/>
 			<div className="MessagesScreen-threadsList">
 				{Object.entries(window.__store.MessagesStore.messages).map(it => {
 					const [key, messages] = it
@@ -35,7 +35,7 @@ class MessagesScreen extends Component<any> {
 						person, lastMessage,
 						history: this.props.history,
 						url
-					});
+					})
 				})}
 			</div>
 			<div className="MessagesScreen-messagesSwitch">
@@ -54,7 +54,7 @@ function MessageEntry(message: any) {
 	const user = window.__store.UserStore.userCache[message.author]
 	const isSelf = !message.author
 	return (
-		<div className={"MessageEntry" + (isSelf ? " self" : "")}>
+		<div className={"MessageEntry" + (isSelf ? " self" : "")} id={message.id}>
 			<div className="MessageEntry-container">
 				{!isSelf ? <img className="avatar" src={getUserAvatar(user)}/> : null}
 				<div className="MessageEntry-content">{message.content}</div>
@@ -64,11 +64,17 @@ function MessageEntry(message: any) {
 	)
 }
 
-class MessagesListFragment extends Component<any> {
+export class MessagesListFragment extends Component<any> {
 	render() {
-		const id = this.props.match.params.threadId;
+		const id = this.props.match.params.threadId
 		const messages = window.__store.MessagesStore.messages[id]
-		return (<div className="MessagesListFragment">{(messages as Array<any>).map(MessageEntry)}</div>)
+		const user = window.__store.UserStore.userCache[id]
+		return (<div className="MessagesListFragment">
+			<AppBar title={user.name}/>
+			<div>
+				{(messages as Array<any>).map(MessageEntry)}
+			</div>
+		</div>)
 	}
 }
 

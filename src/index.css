@@ -7,7 +7,7 @@
 	--text-color-primary: #0F1419;
 	--sky-color: #a6cfcf;
 	--divider-color: #e4e4e4;
-	--app-bar-color: rgb(33, 33, 33);
+	--app-bar-color: white;
 }
 
 * {
@@ -251,7 +251,7 @@ img {
 	flex: 1;
 }
 
-.shadow-1, .card, button, .actionBar, .topSearchBox {
+.shadow-1, .card, button, .AppBar, .topSearchBox {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -350,6 +350,7 @@ button {
 	border-radius: 9999px;
 	transition: all .3s cubic-bezier(.25, .8, .25, 1);
 	border: 0;
+	cursor: pointer;
 	/*margin-bottom: 6px;*/
 }
 
@@ -528,7 +529,7 @@ button, .tab {
 	position: relative;
 }
 
-.fullMapContainer > *:not(.actionBar):not(.fullMapMap) {
+.fullMapContainer > *:not(.AppBar):not(.fullMapMap) {
 	width: var(--global-max-width);
 	margin: 0 auto;
 }
@@ -573,34 +574,37 @@ button, .tab {
 	transform: rotate(180deg);
 }
 
-.actionBar {
+.AppBar {
 	min-height: 56px;
 	background: var(--app-bar-color);
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 	display: flex;
 	align-items: center;
 	z-index: 1;
+	position: fixed;
+	top: 0;
+	width: inherit;
 }
 
-.actionBar .title {
-	font-family: "Segoe UI";
+.AppBar .title {
 	flex: 1;
 	font-weight: 500;
 	font-size: 20px;
-	color: white;
+	color: black;
 	padding: 0 18px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
+	align-self: center;
+	margin-top: -3px;
 }
 
-.actionBar .title img {
+.AppBar .title img {
 	height: 20px;
 }
 
-.actionBar button, .actionBar .iconCont, .topSearchBox button {
+.AppBar button, .AppBar .iconCont, .topSearchBox button {
 	height: 56px;
 	padding: 16px;
 	border-radius: 0;
@@ -608,16 +612,21 @@ button, .tab {
 	box-shadow: none;
 	color: white;
 	outline: none !important;
-	display: inline-block;
-	vertical-align: middle;
+	display: flex;
+	align-items: center;
 }
 
-.actionBar button:hover {
+.AppBar button:hover {
 	background: rgba(204, 204, 204, 0.15);
 }
 
-.actionBar button:active {
+.AppBar button:active {
 	background: rgba(204, 204, 204, 0.25);
+}
+
+.AppBar .iconCont img {
+	width: 20px;
+	height: 20px;
 }
 
 .listLoader, .loadMore {
@@ -902,7 +911,7 @@ nav > a:hover svg, .NavItem-active svg {
 	flex: 1 1 auto;
 	display: flex;
 	justify-content: flex-start;
-	overflow-y: scroll;
+	overflow: hidden;
 	/*border-left: 1px solid rgba(0, 0, 0, 0.12);*/
 }
 
@@ -910,7 +919,7 @@ nav > a:hover svg, .NavItem-active svg {
 	/*width: 990px;*/
 	/*width: 600px;*/
 	width: 700px;
-	padding: 8px 0;
+	overflow-y: scroll;
 }
 
 .contentRoot.mobile {
@@ -956,7 +965,7 @@ nav > a:hover svg, .NavItem-active svg {
 
 .mobile > .switch > div {
 	width: 100%;
-	margin-top: 52px;
+	padding-top: 56px;
 }
 
 h2 {
@@ -972,13 +981,14 @@ h2 {
 .CompanyDetailsHeader {
 	display: flex;
 	align-items: center;
+	padding: 8px;
 }
 
 .CompanyDetailsHeader img {
-	width: 192px;
-	height: 192px;
+	width: 160px;
+	height: 160px;
 	margin-right: 24px;
-	border-radius: 12px;
+	border-radius: 16px;
 	background-color: white;
 }
 
@@ -1234,6 +1244,24 @@ h2 {
 	border-left: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.mobile .MessagesScreen-threadsList {
+	width: 100%;
+}
+
+.mobile .MessagesScreen-messagesSwitch {
+	display: none;
+}
+
+.mobile .MessagesListFragment > div {
+	padding: 8px;
+}
+
+.MessagesListFragment {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
 .MessageEntry {
 	display: flex;
 	margin-bottom: 8px;
@@ -1273,8 +1301,7 @@ h2 {
 	height: 53px;
 }
 
-.AppBar {
-	height: 52px;
+.SearchAppBar {
 	position: fixed;
 	top: 0;
 	width: inherit;
@@ -1305,8 +1332,8 @@ h2 {
 }
 
 .searchBar .avatar {
-	width: 36px;
-	height: 36px;
+	width: 32px;
+	height: 32px;
 	margin: 8px;
 }
 
@@ -1469,7 +1496,7 @@ h2 {
 
 .JobDetailsHeader .title {
 	font-size: 22px;
-	margin:0;
+	margin: 0;
 }
 
 .JobDetailsHeader-companyName {

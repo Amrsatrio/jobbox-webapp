@@ -1,9 +1,19 @@
-export function AppBar() {
-	return <header className="AppBar">
-		<div className="searchBar">
-			<img className="searchIcon" src="/assets/icon/search.svg"/>
-			<input name="search" placeholder="Search"/>
-			<img className="avatar" src="/assets/avatar/XzAyMTYzMDYuanBn.jpg"/>
+import { useHistory } from "react-router-dom"
+
+export function AppBar(props: any) {
+	//const url = useRouteMatch().url
+	const history = useHistory()
+	return (<header className="AppBar">
+		{(props.showUp == null || props.showUp) ? <div>
+			{/*<NavLink to={url.substring(0, url.lastIndexOf('/'))} className="backButton iconCont">
+				<img src="/assets/icon/back.svg"/>
+			</NavLink>*/}
+			<button onClick={history.goBack} className="backButton iconCont">
+				<img src="/assets/icon/back.svg"/>
+			</button>
+		</div> : null}
+		<div className="title">
+			{props.title}
 		</div>
-	</header>
+	</header>)
 }

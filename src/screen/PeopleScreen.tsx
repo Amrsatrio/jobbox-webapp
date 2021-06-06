@@ -40,7 +40,7 @@ export function getUserAvatar(person: { avatar: string }): string {
 class PeopleScreen extends Component<any> {
 	render() {
 		return (<div>
-			<AppBar/>
+			<AppBar title="People" showUp={false} />
 			<div>
 				{Object.values(window.__store.UserStore.userCache as Array<Person>).map(it => PersonEntry({
 					person: it,

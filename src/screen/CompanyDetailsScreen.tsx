@@ -3,6 +3,7 @@ import { RouteComponentProps } from "react-router"
 import { withRouter } from "react-router-dom"
 import Job from "../component/Job"
 import Post from "../component/Post"
+import { AppBar } from "../component/AppBar"
 
 interface CompanyDetailsScreenProps {
 	id: string
@@ -26,15 +27,15 @@ class CompanyDetailsScreen extends Component<RouteComponentProps<CompanyDetailsS
 	render() {
 		const id = this.props.match.params.id
 		const company = window.__store.CompanyStore.companies[id]
-		return (
-			<div>
-				<CompanyDetailsHeader company={company}/>
-				<h2>Job Offers</h2>
-				<div className="simpleHorizontalScroll">{(company.jobOffers as Array<any>)?.map(it => Job({ jobId: it, history: this.props.history, showJobIllustration: true }))}</div>
-				<h2>Posts</h2>
-				<div>{(company.posts as Array<string>)?.map(it => Post(window.__store.PostStore.posts[it]))}</div>
-			</div>
-		)
+		return (<div className="CompanyDetailsScreen">
+			<AppBar title="Company" />
+			<CompanyDetailsHeader company={company}/>
+			<h2>Job Offers</h2>
+			<div
+				className="simpleHorizontalScroll">{(company.jobOffers as Array<any>)?.map(it => Job({ jobId: it, history: this.props.history, showJobIllustration: true }))}</div>
+			<h2>Posts</h2>
+			<div>{(company.posts as Array<string>)?.map(it => Post(window.__store.PostStore.posts[it]))}</div>
+		</div>)
 	}
 }
 

@@ -3,13 +3,13 @@ import { Component } from "react"
 import Post from "../component/Post"
 import Job from "../component/Job"
 import { withRouter } from "react-router-dom"
-import { AppBar } from "../component/AppBar"
+import { SearchAppBar } from "../component/SearchAppBar"
 
 class HomeScreen extends Component<any> {
 	render() {
 		let homeStore = window.__store.HomeStore
 		return (<div className="HomeScreen">
-			<AppBar/>
+			<SearchAppBar/>
 			<h2>Recommended</h2>
 			<div className="Home-recommended simpleHorizontalScroll">{(homeStore.recommended as Array<any>).map(it => Job({
 				jobId: it,

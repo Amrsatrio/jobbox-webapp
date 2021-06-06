@@ -2,6 +2,7 @@ import { Component } from "react"
 import { RouteComponentProps } from "react-router"
 import { getUserAvatar } from "./PeopleScreen"
 import { withRouter } from "react-router-dom"
+import { AppBar } from "../component/AppBar"
 
 interface ProfileScreenProps {
 	id: string
@@ -100,6 +101,7 @@ class ProfileScreen extends Component<RouteComponentProps<ProfileScreenProps>> {
 		const id = this.props.match.params.id
 		const user = window.__store.UserStore.userCache[id]
 		return (<div>
+			<AppBar title="Profile"/>
 			<ProfileHeader user={user} history={this.props.history}/>
 			<div className="card cardContent">
 				<h3>Recent Achievements</h3>

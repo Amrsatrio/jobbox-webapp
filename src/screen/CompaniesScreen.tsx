@@ -27,7 +27,7 @@ function CompanyEntry(props: any) {
 class CompaniesScreen extends Component<RouteComponentProps> {
 	render() {
 		return (<div>
-			<AppBar/>
+			<AppBar title="Companies" showUp={false}/>
 			<div>
 				{Object.values(window.__store.CompanyStore.companies as Array<any>)
 					.map(it => (<CompanyEntry company={it} history={this.props.history} key={it.id}/>))}
