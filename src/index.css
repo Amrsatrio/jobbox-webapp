@@ -1390,7 +1390,7 @@ h2 {
 }
 
 .SiteNav a:last-child {
-	border-color: rgba(0,0,0,0.33);
+	border-color: rgba(0, 0, 0, 0.33);
 }
 
 .howItWorks {
@@ -1608,4 +1608,49 @@ h2 {
 
 .commentBubble p {
 	margin: 0;
+}
+
+.LoginScreen {
+	background: url("background-login.png") no-repeat center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loginForm {
+	background-color: white;
+	border-radius: 32px;
+	padding: 32px;
+	margin: 32px;
+	width: 100%;
+}
+
+.loginForm .hint {
+	margin: 0 0 8px;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.loginForm input {
+	height: 40px;
+	margin-bottom: 12px;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.33);
+	border-radius: 8px;
+	padding: 0 8px;
+}
+
+.loginForm .colored {
+	display: block;
+	width: 100%;
+	margin-top: 16px;
+	font-size: 18px;
+	height: 40px;
+}
+
+.registerHint {
+	font-size: small;
+	text-align: center;
+	margin: 24px 0 0;
 }

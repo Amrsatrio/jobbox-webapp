@@ -15,6 +15,7 @@ import LandingScreen from "./screen/LandingScreen"
 import NearMeScreen from "./screen/NearMeScreen"
 import { AppBar } from "./component/AppBar"
 import PostScreen from "./screen/PostScreen"
+import LoginScreen from "./screen/LoginScreen"
 
 declare global {
 	interface Window {
@@ -151,6 +152,7 @@ ReactDOM.render(
 						<Route path="/posts/:id" component={PostScreen}/>
 
 						<Route exact path="/" component={LandingScreen}/>
+						<Route exact path="/login" component={LoginScreen}/>
 					</Switch>
 				</div>
 				<BottomNavigationBar_/>
