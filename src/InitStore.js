@@ -320,6 +320,7 @@ window.__store = {
 		posts: {
 			"grab": {
 				id: "grab",
+				author: "grab",
 				body: "Join us for an 8-hour #IWD2021 special on Clubhouse today, starting 3PM SGT: https://lnkd.in/ga2fF9B!\n\nHear 20 female Grabbers across different teams share their experiences and views on a series of topics — from career development to challenges and debunking myths about women. See you on Clubhouse in a bit!\n\n#ChooseToChallenge",
 				image: "/assets/1615181863707.jfif"
 			}

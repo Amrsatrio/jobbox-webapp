@@ -31,10 +31,13 @@ class CompanyDetailsScreen extends Component<RouteComponentProps<CompanyDetailsS
 			<AppBar title="Company" />
 			<CompanyDetailsHeader company={company}/>
 			<h2>Job Offers</h2>
-			<div
-				className="simpleHorizontalScroll">{(company.jobOffers as Array<any>)?.map(it => Job({ jobId: it, history: this.props.history, showJobIllustration: true }))}</div>
+			<div className="simpleHorizontalScroll">
+				{(company.jobOffers as Array<any>)?.map(it => <Job jobId={it} history={this.props.history} showJobIllustration={true}/>)}
+			</div>
 			<h2>Posts</h2>
-			<div>{(company.posts as Array<string>)?.map(it => Post(window.__store.PostStore.posts[it]))}</div>
+			<div>
+				{(company.posts as Array<string>)?.map(it => <Post postId={it} history={this.props.history}/>)}
+			</div>
 		</div>)
 	}
 }

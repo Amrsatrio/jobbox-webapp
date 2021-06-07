@@ -48,6 +48,11 @@ img {
 
 #landing > div {
 	overflow: auto;
+	z-index: 5;
+}
+
+.LandingScreen {
+	padding: 0 !important;
 }
 
 .wrapper {
@@ -251,11 +256,11 @@ img {
 	flex: 1;
 }
 
-.shadow-1, .card, button, .AppBar, .topSearchBox {
+.shadow-1, .card, button, .AppBar, .topSearchBox, .searchBar {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.shadow-2 {
+.shadow-2, .mobileNav {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -650,6 +655,7 @@ button, .tab {
 .timestamp {
 	opacity: 0.6;
 	font-size: 13px;
+	font-weight: normal;
 }
 
 .listEmpty {
@@ -920,6 +926,7 @@ nav > a:hover svg, .NavItem-active svg {
 	/*width: 600px;*/
 	width: 700px;
 	overflow-y: scroll;
+	padding-top: 56px;
 }
 
 .contentRoot.mobile {
@@ -934,7 +941,8 @@ nav > a:hover svg, .NavItem-active svg {
 	display: none;
 	flex-direction: row;
 	background: #FFF;
-	border-top: 1px solid rgba(0, 0, 0, 0.12);
+	/*border-top: 1px solid rgba(0, 0, 0, 0.12);*/
+	z-index: 1;
 }
 
 .mobile .mobileNav {
@@ -965,7 +973,6 @@ nav > a:hover svg, .NavItem-active svg {
 
 .mobile > .switch > div {
 	width: 100%;
-	padding-top: 56px;
 }
 
 h2 {
@@ -981,19 +988,20 @@ h2 {
 .CompanyDetailsHeader {
 	display: flex;
 	align-items: center;
-	padding: 8px;
+	padding: 16px;
 }
 
 .CompanyDetailsHeader img {
 	width: 160px;
 	height: 160px;
-	margin-right: 24px;
+	margin-right: 16px;
 	border-radius: 16px;
 	background-color: white;
 }
 
 .CompanyDetailsHeader h2 {
 	margin: 0;
+	font-size: 22px;
 }
 
 .CompanyDetailsHeader .text2 {
@@ -1313,7 +1321,6 @@ h2 {
 	margin: 8px;
 	background-color: white;
 	border-radius: 8px;
-	box-shadow: rgba(0, 0, 0, 0.33) 0 0 6px;
 }
 
 .searchBar .searchIcon {
@@ -1369,6 +1376,21 @@ h2 {
 
 .SiteNav .brandingLogo {
 	height: 40px;
+}
+
+.SiteNav a {
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	margin-left: 6px;
+	padding: 0 8px;
+	color: black;
+	border: 1px solid transparent;
+	border-radius: 6px;
+}
+
+.SiteNav a:last-child {
+	border-color: rgba(0,0,0,0.33);
 }
 
 .howItWorks {
@@ -1512,7 +1534,7 @@ h2 {
 
 .JobDetailsHeader-applyJob {
 	margin-top: 12px;
-	width: 100%;
+	width: 160px;
 }
 
 .JobDetailsScreen p {
@@ -1521,4 +1543,69 @@ h2 {
 
 .JobDetailsScreen ul {
 	padding-left: 36px;
+}
+
+.postImage {
+	width: 100%;
+}
+
+.postContent {
+	background-color: white;
+	padding: 12px 16px 0;
+}
+
+.postContent p {
+	margin: 0;
+}
+
+.actionRow {
+	display: flex;
+}
+
+.actionRow > div {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	height: 36px;
+	font-size: 14px;
+}
+
+.actionRow img {
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+}
+
+.PostScreen h2 {
+	font-size: 16px;
+	margin: 12px 16px;
+}
+
+.comment {
+	display: flex;
+	padding: 0 12px;
+}
+
+.comment:not(:first-child) {
+	margin-top: 8px;
+}
+
+.comment .avatar {
+	width: 40px;
+	height: 40px;
+}
+
+.commentBubble {
+	flex: 1;
+	margin-left: 12px;
+}
+
+.commentBubble .title {
+	font-weight: bold;
+}
+
+.commentBubble p {
+	margin: 0;
 }

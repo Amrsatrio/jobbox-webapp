@@ -11,12 +11,13 @@ class HomeScreen extends Component<any> {
 		return (<div className="HomeScreen">
 			<SearchAppBar/>
 			<h2>Recommended</h2>
-			<div className="Home-recommended simpleHorizontalScroll">{(homeStore.recommended as Array<any>).map(it => Job({
-				jobId: it,
-				history: this.props.history
-			}))}</div>
+			<div className="Home-recommended simpleHorizontalScroll">
+				{(homeStore.recommended as Array<any>).map(it => <Job jobId={it} history={this.props.history}/>)}
+			</div>
 			<h2>Recently Posted</h2>
-			<div className="App-recentlyPosted">{(homeStore.recentlyPosted as Array<string>).map(it => Post(window.__store.PostStore.posts[it]))}</div>
+			<div className="App-recentlyPosted">
+				{(homeStore.recentlyPosted as Array<string>).map(it => <Post postId={it} history={this.props.history}/>)}
+			</div>
 		</div>)
 	}
 }

@@ -3,6 +3,9 @@ import { Component } from "react"
 function SiteNav() {
 	return (<header className="SiteNav">
 		<img className="brandingLogo" src="/assets/logo/jobbox-02.png"/>
+		<div style={{ flex: "1" }}/>
+		<a href="/login">Sign in</a>
+		<a href="/register">Sign up</a>
 	</header>)
 }
 
